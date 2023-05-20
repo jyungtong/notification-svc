@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "1bfab377-dfc9-4b26-94eb-53a0b4a225cd",
+		"name": "BrioHR - notification-svc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1611376"
+	},
+	"item": [
+		{
+			"name": "POST /notifications",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"notification_type\": \"happy-birthday\",\n    \"user_id\": \"user-2\",\n    \"company_id\": \"comp-2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/notifications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notifications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /notifications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/notifications?channel_type=UI&user_id=user-2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notifications"
+					],
+					"query": [
+						{
+							"key": "channel_type",
+							"value": "UI"
+						},
+						{
+							"key": "user_id",
+							"value": "user-2"
+						},
+						{
+							"key": "company_id",
+							"value": "xxx",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

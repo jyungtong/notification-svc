@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  mongodb:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: test
+      MONGO_INITDB_ROOT_PASSWORD: test
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+
+  mongo-seed:
+    build: ./db-seed
+    depends_on:
+      - mongodb
+
+  web-server:
+    build: .
+    depends_on:
+      - mongodb
+    ports:
+      - 3000:3000
+    environment:
+      MONGODB_URI: 'mongodb://test:test@mongodb'
+
+volumes:
+  mongodb_data_container:

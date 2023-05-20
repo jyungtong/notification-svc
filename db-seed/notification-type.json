@@ -1,0 +1,48 @@
+[
+{
+    "_id": 1,
+    "type" : "test",
+    "channels" : [ 
+        "EMAIL", 
+        "UI"
+    ],
+    "template" : {
+        "subject" : "send to {{first_name}}",
+        "content" : "body for {{first_name}} and company {{company_name}}"
+    }
+},
+{
+    "_id": 2,
+    "type" : "happy-birthday",
+    "channels" : [ 
+        "EMAIL", 
+        "UI"
+    ],
+    "template" : {
+        "subject" : "Happy Birthday {{first_name}}",
+        "content" : "Happy Birthday {{first_name}} from {{company_name}}"
+    }
+},
+{
+    "_id": 3,
+    "type" : "monthly-payslip",
+    "channels" : [ 
+        "EMAIL"
+    ],
+    "template" : {
+        "subject" : "{{first_name}}, your payslip is available",
+        "content" : "Dear {{first_name}}, your payslip is available from {{company_name}}"
+    }
+},
+{
+    "_id": 4,
+    "type" : "leave-balance-reminder",
+    "channels" : [ 
+        "UI"
+    ],
+    "template" : {
+        "subject" : "",
+        "content" : "Dear {{first_name}}, reminder to take leave from {{company_name}}"
+    }
+}
+]
